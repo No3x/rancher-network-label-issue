@@ -1,0 +1,14 @@
+version: '2'
+services:
+ ranchertest:
+   labels:
+     - io.rancher.container.network=true
+#   networks:
+#     - none
+   build:
+     context: .
+     dockerfile: Dockerfile
+   environment:
+     - HOME=/home/app/code
+   volumes:
+     - .:/home/app/code
